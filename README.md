@@ -1,4 +1,4 @@
-# Advanced Subdomain Finder
+# Subdomain Finder
 
 A Bash-based subdomain enumeration tool that aggregates results from six OSINT sources, validates them via DNS resolution, and maps resolved subdomains to their IP addresses.
 
@@ -34,13 +34,13 @@ sudo apt install curl jq dnsutils
 ## Usage
 
 ```bash
-chmod +x advanced_sub_finder.sh
-./advanced_sub_finder.sh <domain>
+chmod +x subdomain_enumeration.sh
+./subdomain_enumeration.sh <domain>
 ```
 
 **Example:**
 ```bash
-./advanced_sub_finder.sh example.com
+./subdomain_enumeration.sh example.com
 ```
 
 The domain can be passed with or without a scheme/path (e.g. `https://example.com/page` is automatically normalized to `example.com`).
@@ -89,11 +89,7 @@ The script generates four files in the current directory:
 - DNS validation depends on the resolver configured on your system; results may vary slightly between environments
 - Some public APIs used here (e.g. URLScan.io, HackerTarget) are rate-limited; heavy/repeated use against the same domain may return partial results
 - Only IPv4 addresses are extracted in the IP resolution step
-
-## Disclaimer
-
-This tool is intended **for authorized security testing, bug bounty programs, and educational purposes only**. Only run it against domains you own or have explicit written permission to test. Unauthorized scanning of systems you do not own or have permission to assess may be illegal in your jurisdiction. The author assumes no liability for misuse.
-
+- 
 ## Author
 
 Built by Zytoona as part of ongoing offensive security / OSINT tooling practice.
